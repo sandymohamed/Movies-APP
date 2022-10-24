@@ -1,13 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ThemeContext } from '../context';
-import { faLightbulb } from '@fortawesome/free-regular-svg-icons'
+import { faLightbulb, faMoon, faSun } from '@fortawesome/free-regular-svg-icons'
 
 const Nav = () => {
   const list = useSelector(state=> state.favList)
   const {themeContext, setThemeContext} = useContext(ThemeContext);
+
+  const [myIcon, setMyIcon]= useState(faMoon);
+  const handleTheme = () => {
+    setMyIcon((myIcon === faMoon)? faSun : faMoon)
+    setThemeContext(themeContext === "normal" ? "darkMode" : "normal")
+  }
 
   return (
     <div >
@@ -27,6 +33,10 @@ const Nav = () => {
               </li>
 
               <li className="nav-item ms-2 ">
+                <Link className="nav-link text-warning"  to='/trends'>Trends</Link>
+              </li>
+
+              <li className="nav-item ms-2 ">
                  <Link className="nav-link text-warning  " to='/myfav'>
                  <FontAwesomeIcon icon="fa-solid fa-heart"  className='fs-3'  />
                         {list}
@@ -35,8 +45,8 @@ const Nav = () => {
              </li>
 
              <li className="nav-item ms-2 ">
-                 <Link className="nav-link text-warning" onClick={()=>setThemeContext(themeContext === "normal" ? "darkMode" : "normal")}>
-                 <FontAwesomeIcon icon={faLightbulb} className='fs-4' />                                
+                 <Link className="nav-link text-warning" onClick={()=>handleTheme()}>
+                 <FontAwesomeIcon icon={myIcon} className='fs-3' />                                
                  </Link>
        
              </li>

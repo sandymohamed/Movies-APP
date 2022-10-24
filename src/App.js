@@ -18,6 +18,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import FavMovies from './components/pages/FavMovies/FavMovies';
 import {  useState } from 'react';
 import { ThemeContext } from './components/context';
+import TrendsMovies from './components/pages/trendsMovies/TrendsMovies';
 
 library.add(fas)
 
@@ -25,7 +26,6 @@ library.add(fas)
 
 function App() {
   const [themeContext, setThemeContext]= useState('normal')
-console.log(themeContext)
 
   return (
 
@@ -38,6 +38,7 @@ console.log(themeContext)
       <Route path="/" element={<Home />} />
       <Route path="/movies" element={<AllMovies />} />
       <Route path="/myfav" element={<FavMovies />} />
+      <Route path="/trends" element={<TrendsMovies />} />
       <Route path="/movie/:id" element={<MovieDetails />} />
            {/* redirect in v6 */}
            <Route

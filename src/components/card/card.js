@@ -19,8 +19,12 @@ const MyCard = ({ item ,heart}) => {
       <UpdateFavList id={item.id} heartClass={heart} />
 
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/original${item.poster_path}`}  />
-      <Card.Body className="text-warning">
-        <Card.Title>{`${item.original_title}`}</Card.Title>
+      <Card.Body className="text-dark">
+
+      {(item.original_title) &&  <Card.Title>{`${item.original_title}` }</Card.Title>}
+
+      {(item.original_name) &&  <Card.Title>{`${item.original_name}` }</Card.Title>}
+
         <Card.Text>
           langauge: {item.original_language}
         </Card.Text>
@@ -54,7 +58,7 @@ const MyCard = ({ item ,heart}) => {
           {/* <button className='btn btn-primary' onClick={()=>{}}>watch now</button> */}
 
           {(!param.id) &&
-            <Link to={`/movie/${item.id}`} className='btn btn-primary'>
+            <Link to={`/movie/${item.id}`} className='btn btn-warning'>
               <p key={item.id}>Watch now </p>
             </Link>}
 

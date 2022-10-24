@@ -1,3 +1,13 @@
 .gold{
-    color: gold;
+    color: gold !important;
+}
+
+.heart-pos{
+    position: absolute;
+    top: 0; left: 0;
+    color: rgb(116, 113, 113);
+    margin: .5rem; padding: .1rem;
+    cursor: pointer;
+    z-index: 9;
+
 }

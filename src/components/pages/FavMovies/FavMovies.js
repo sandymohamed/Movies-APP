@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 const FavMovies = () => {
 
     const movies = useSelector(state => state.moviesIds)
-    console.log('m = ' + movies)
 
     return (
 
@@ -18,7 +17,7 @@ const FavMovies = () => {
             {(movies.length > 0) ?
                     movies.map((item, i) => (
                         <MyCard item={item} key={i} heart='gold'/>
-                    )) : <h1>ADD movie to fav</h1>
+                    )) : <h1>No favorite movies yet..</h1>
                 }
             </div >
 

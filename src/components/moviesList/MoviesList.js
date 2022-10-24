@@ -20,14 +20,12 @@ const MoviesList = () => {
 
     
     const handleSearch = (e) => {
-        console.log("e= " + e.target.value)
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${e.target.value}`)
             .then(res => {
                 setDate(res.data.results)
             })
             .catch(err => console.log(err))
     }
-console.log(data)
 
     return (
         <div>

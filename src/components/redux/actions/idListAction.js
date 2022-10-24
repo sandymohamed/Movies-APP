@@ -1,7 +1,5 @@
 
 export const addID = (payload) => {
-    console.log('payoad' + payload)
-
     return {
         type:"ADD_ID",
         payload 

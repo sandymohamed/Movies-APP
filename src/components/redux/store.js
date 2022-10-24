@@ -1,12 +1,11 @@
-import { createStore } from 'redux'
-import favListReducer from './reducers/favListReducer'
+import { createStore ,applyMiddleware} from 'redux'
 import { composeWithDevTools } from "redux-devtools-extension"
 import combineReducers from './reducers/compineReducers'
+import thunk from "redux-thunk";
 
 
-// const store = createStore(favListReducer)
 
-const store = createStore(combineReducers, composeWithDevTools())
+const store = createStore(combineReducers, composeWithDevTools(applyMiddleware(thunk)))
 
 
 // const composeEnhancers =

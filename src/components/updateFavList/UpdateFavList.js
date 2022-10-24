@@ -73,7 +73,7 @@ const res = await   axios.get(`${process.env.REACT_APP_API_URL}${ID}?api_key=${p
     return (
         <div>
 
-            <FontAwesomeIcon icon="fa-solid fa-heart" id={id} key={Math.floor(10)} ref={heart} className={`fs-3 ${heartClass}`} onClick={() => handleFavList(id)} />
+            <FontAwesomeIcon icon="fa-solid fa-heart" id={id} key={Math.floor(10)} ref={heart} className={`heart-pos fs-3  ${heartClass}`} onClick={() => handleFavList(id)} />
 
         </div>
     );
