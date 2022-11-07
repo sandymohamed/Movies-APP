@@ -18,7 +18,7 @@ const MovieDetails = () => {
     }, [])
 
     return (
-        <div className='p-5 '>
+        <div className='p-5 ' >
             <span className='d-flex'>
                 <p className='fs-4'>Movie Type :  </p>
                 {(movie.genres) ?  (movie.genres).map((i,ind) => (

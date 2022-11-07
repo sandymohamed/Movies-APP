@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import MyCard from "../../card/card";
 import { getTrendsMovie, getTrendsTV ,getTrendsAll} from "../../redux/actions/trendsMovies";
 import Dropdown from 'react-bootstrap/Dropdown';
+import Loader from "../../loader/loader";
 
 
 const TrendsMovies = () => {
+
+    const isLoading = useSelector((state)=> state.loader.isLoading)
 
     const trends = useSelector((state)=> state.trends.trendsMovies)
     const dispatch = useDispatch() 
@@ -65,7 +68,8 @@ const TrendsMovies = () => {
                     ))
                 }
         </div>
-        
+        { isLoading && <Loader />}  
+
         </>
        
     );

@@ -19,6 +19,8 @@ import FavMovies from './components/pages/FavMovies/FavMovies';
 import {  useState } from 'react';
 import { ThemeContext } from './components/context';
 import TrendsMovies from './components/pages/trendsMovies/TrendsMovies';
+// import Loader from './components/loader/loader';
+// import { useSelector } from 'react-redux';
 
 library.add(fas)
 
@@ -26,6 +28,7 @@ library.add(fas)
 
 function App() {
   const [themeContext, setThemeContext]= useState('normal')
+  // const isLoading = useSelector((state)=> state.loader.isLoading)
 
   return (
 
@@ -39,7 +42,7 @@ function App() {
       <Route path="/movies" element={<AllMovies />} />
       <Route path="/myfav" element={<FavMovies />} />
       <Route path="/trends" element={<TrendsMovies />} />
-      <Route path="/movie/:id" element={<MovieDetails />} />
+      <Route path="/movie/:id" element={<MovieDetails style={{'height': '100px'}} />} />
            {/* redirect in v6 */}
            <Route
         path="/home"
@@ -48,6 +51,7 @@ function App() {
       <Route path="*" element={<NotFoundPage />} />
       
     </Routes>
+    {/* { isLoading && <Loader />}   */}
 
   </BrowserRouter>
   </div>
