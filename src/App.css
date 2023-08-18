@@ -1,3 +1,9 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
 .darkMode{
   background-color: #222;
   color: #fff ;
@@ -6,4 +12,25 @@
 .normal{
   background-color: #fff;
   color: #222;
+}
+
+.logo {
+  font-weight: bold;
+  width: max-content;
+  background: #949093;
+  background: linear-gradient(to right, rgb(255, 215, 50) 0%,  rgb(207, 156, 2) 50%, rgb(207, 81, 2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: .5rem;
+  border: 2px  rgb(207, 81, 2) solid;
+  border-radius: 3rem;
+}
+
+.title  {
+  text-align: center;
+  font-weight: bold;
+  background: #949093;
+  background: linear-gradient(to right, rgb(255, 215, 50) 0%,  rgb(207, 156, 2) 50%, rgb(207, 81, 2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

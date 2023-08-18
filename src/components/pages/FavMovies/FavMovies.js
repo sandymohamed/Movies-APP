@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-// import  * as favMoviesId  from '../../FavMoviesList' ; 
 import MyCard from '../../card/card';
 import { useSelector } from 'react-redux';
-
+//  --------------------------------------
 
 const FavMovies = () => {
 
@@ -11,17 +8,15 @@ const FavMovies = () => {
 
     return (
 
-        <div>
-            <div className='cards-container'>
+        <div className='cards-container ' style={{ minHeight: '100vh' }}>
 
             {(movies.length > 0) ?
-                    movies.map((item, i) => (
-                        <MyCard item={item} key={i} heart='gold'/>
-                    )) : <h1>No favorite movies yet..</h1>
-                }
-            </div >
+                movies.map((item, i) => (
+                    <MyCard item={item} key={i} heart='gold' moreStyle='col-8 col-md-3' />
+                )) : <h1 className='title'>No favorite movies yet..</h1>
+            }
+        </div >
 
-        </div>
     );
 };
 

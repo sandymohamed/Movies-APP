@@ -33,7 +33,7 @@ function App() {
   return (
 
     <ThemeContext.Provider value={{themeContext, setThemeContext}}>
-      <div className={themeContext}>
+      <div className={themeContext} style={{width:' 100%', height :'100%'}}>
 
     <BrowserRouter>
     <Nav />
@@ -51,7 +51,6 @@ function App() {
       <Route path="*" element={<NotFoundPage />} />
       
     </Routes>
-    {/* { isLoading && <Loader />}   */}
 
   </BrowserRouter>
   </div>

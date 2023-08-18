@@ -1,0 +1,12 @@
+/* Custom CSS for warning variant */
+.pagination-warning .page-link {
+    color: #ffc107; /* Warning color for text */
+    background-color: transparent; /* Background color for normal state */
+    border-color: #ffc107; /* Border color for the borders */
+  }
+  
+  .pagination-warning .page-item.active .page-link {
+    background-color: #ffc107; /* Background color for active state */
+    border-color: #ffc107; /* Border color for active state */
+  }
+  

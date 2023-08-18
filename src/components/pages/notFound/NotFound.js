@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+//  ---------------------------------------------------
 
 const NotFoundPage = () => {
     return (
-        <div>
-        <img 
-        src="https://img.freepik.com/free-vector/internet-network-warning-404-error-page-file-found-web-page-internet-error-page-issue-found-network-404-error-present-by-man-sleep-display_1150-55450.jpg?w=1060&t=st=1666101549~exp=1666102149~hmac=90d8fa7efb75049163a1db023f071e9411008d55c4a170f40ba8d91ad4bdd8b4"
-        alt="not found"
-        />
-    </div>
+        <div className=' w-75 d-flex justify-content-center align-items-center flex-column m-5 p-5' style={{ minHeight: '100vh' }}>
+
+            <span className='h1 fw-bold'>Error 404</span>
+            <p className="title h3">Page not found! Looks like the URL went on a vacation without leaving a forwarding address. Let's hope it's enjoying some sunny beaches and will be back soon!</p>
+            <Link to='/' className="title fs-3 text-decoration-underline"> Click here be redirected to the homepage.</Link>
+
+        </div>
     );
 };
 

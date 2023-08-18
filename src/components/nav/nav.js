@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ThemeContext } from '../context';
-import { faLightbulb, faMoon, faSun } from '@fortawesome/free-regular-svg-icons'
+import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
+import '../../App.css';
+//  ----------------------------------------------------------------------------------------------
 
 const Nav = () => {
   const list = useSelector(state=> state.favList)
@@ -19,7 +21,7 @@ const Nav = () => {
     <div >
       <nav className={`navbar navbar-expand-lg  ${themeContext}`}>
         <div className={`container-fluid ${themeContext}`}>
-          <Link className="navbar-brand text-warning border border-primary p-2" to='/' >Watch</Link>
+          <Link className="navbar-brand  logo" to='/' >Watch</Link>
           {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button> */}

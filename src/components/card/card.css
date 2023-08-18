@@ -1,0 +1,12 @@
+.dark-card{
+    background-color: #2e3038;
+    color: #fff ;
+    border: none;
+  }
+  
+  .normal-card{
+    background-color: #f3f1f0;
+    color: #222;
+    border: none;
+
+  }
