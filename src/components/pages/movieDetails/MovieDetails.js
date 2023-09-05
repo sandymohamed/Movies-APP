@@ -14,7 +14,7 @@ const MovieDetails = () => {
             .get(`${process.env.REACT_APP_API_URL}${param.id}?api_key=${process.env.REACT_APP_API_KEY}`)
             .then((res) => setMovie(res.data))
             .catch((err) => console.log(err));
-    }, []);
+    }, [param?.id]);
 
     return (
         <div
@@ -22,7 +22,7 @@ const MovieDetails = () => {
            
         >
 
-            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className='image' style={{}} />
+            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie?.original_title} className='image' style={{}} />
 
             <div className='d-flex flex-column justify-content-center align-items-center content m-0 '>
 

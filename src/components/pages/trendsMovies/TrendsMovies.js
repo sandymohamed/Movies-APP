@@ -1,4 +1,4 @@
-import { useEffect,  } from "react";
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MyCard from "../../card/card";
 import { getTrendsMovie, getTrendsTV, getTrendsAll } from "../../redux/actions/trendsMovies";
@@ -10,39 +10,33 @@ const TrendsMovies = () => {
 
     const isLoading = useSelector((state) => state.loader.isLoading)
 
-    const trends = useSelector((state) => state.trends.trendsMovies)
-    const dispatch = useDispatch()
+    const trends = useSelector((state) => state.trends.trendsMovies);
+    const dispatch = useDispatch();
 
-    const getData = (func) => {
+    const getData = useCallback((func) => {
         switch (func) {
             case "getTrendsAll":
-                dispatch(getTrendsAll())
+                dispatch(getTrendsAll());
                 break;
-
             case "getTrendsTV":
-                dispatch(getTrendsTV())
+                dispatch(getTrendsTV());
                 break;
-
             case "getTrendsMovie":
-                dispatch(getTrendsMovie())
+                dispatch(getTrendsMovie());
                 break;
-
             default:
-                dispatch(getTrendsAll())
-
+                dispatch(getTrendsAll());
                 break;
         }
-    }
+    }, [dispatch]);
 
     useEffect(() => {
-
-        getData('test')
-
-    }, [])
+        getData('test');
+    }, [getData]);
 
     return (
 
-        <div style={{minHeight: '100vh'}}>
+        <div style={{ minHeight: '100vh' }}>
             <Dropdown onSelect={(e) => {
                 getData(e)
             }}>
@@ -61,9 +55,9 @@ const TrendsMovies = () => {
             <div className='cards-container'>
                 {
                     isLoading ? <Loader /> :
-                    trends?.map((item, i) => (
-                        <MyCard item={item} key={i} />
-                    ))
+                        trends?.map((item, i) => (
+                            <MyCard item={item} key={i} />
+                        ))
                 }
             </div>
 

@@ -28,13 +28,13 @@ const UpdateFavList = ({ id, heartClass }) => {
 
 
     useEffect(() => {
-        movies.map((item) => {
-            if (item.id === id && !heart.current.classList.contains('gold')) {
-                heart.current.classList.add('gold')
-            }
-        })
-
-    }, [id, movies])
+        movies.forEach((item) => {
+          if (item.id === id && !heart.current.classList.contains('gold')) {
+            heart.current.classList.add('gold');
+          }
+        });
+      }, [id, movies]);
+      
 
     const handleFavList = (id) => {
         // get fav icon

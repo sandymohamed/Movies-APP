@@ -1,12 +1,21 @@
 /* Custom CSS for warning variant */
 .pagination-warning .page-link {
-    color: #ffc107; /* Warning color for text */
-    background-color: transparent; /* Background color for normal state */
-    border-color: #ffc107; /* Border color for the borders */
+  /* height: 5vh; */
+    color: #ffc107; 
+    background-color: transparent; 
+    border-color: #ffc107; 
   }
   
   .pagination-warning .page-item.active .page-link {
-    background-color: #ffc107; /* Background color for active state */
-    border-color: #ffc107; /* Border color for active state */
+    background-color: #ffc107; 
+    border-color: #ffc107; 
   }
   
+  .active-page {
+    background-color: hsl(45, 92%, 80%) !important; 
+    border-color: #ffc107 !important; 
+  }
+  
+  .links span {
+    font-size: 1rem !important;
+  }

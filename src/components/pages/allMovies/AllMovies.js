@@ -33,7 +33,6 @@ const AllMovies = () => {
         <div style={{minHeight: '100vh'}}>
 
             <AdvancedExample sendDataToParent={sendDataToParent} />
-            {/* <h1 className='text-center'>Movies</h1> */}
 
             <div className='cards-container'>
 
